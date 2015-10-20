@@ -1,4 +1,4 @@
-var mongoshopslist = require('./../models/ShopsListModel')
+var Shopslistmodel = require('./../models/ShopsListModel')
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
@@ -9,7 +9,9 @@ module.exports=function(req, res, next) {
   longitude = req.query.long;
   category= req.query.cat;
 
+
     mongoshopslist.navneet();
+
     res.send('function called');
   //res.send('latitude ='+latitude +'longitude ='+longitude + category+'connection sucessful');
     
