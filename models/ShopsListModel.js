@@ -5,11 +5,18 @@
 var mongoCollections=require('./mongoConnector');
 
 function shoplist() {
-    db.collection('shopslist').find().toArray(function(error,docs){
+    console.log('mongocollection value',mongoCollections)
+    mongoCollections.shopslist.find().toArray(function(error,docs){
         assert.equal(null,error);
-        res.send(docs);
+        console.log(docs);
     });
 
 
 
+}
+
+
+shoplistobject={
+    navneet:shoplist
 };
+module.exports=shoplistobject;
