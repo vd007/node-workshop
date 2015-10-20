@@ -10,10 +10,10 @@ module.exports=function(req, res, next) {
   category= req.query.cat;
 
 
-    mongoshopslist.navneet();
+    Shopslistmodel.getShops(function(shops){ res.send(shops); });
 
-    res.send('function called');
-  //res.send('latitude ='+latitude +'longitude ='+longitude + category+'connection sucessful');
+
+    //res.send('latitude ='+latitude +'longitude ='+longitude + category+'connection sucessful');
     
   
 }

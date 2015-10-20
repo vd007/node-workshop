@@ -5,20 +5,18 @@
 var mongo=require('./mongoConnector');
 var assert = require('assert');
 
-function shoplist() {
+exports.getShops = function(fn) {
+
     console.log('mongocollection value',mongo)
     mongo.collections.shopslist.find().toArray(function(error,docs){
         assert.equal(null,error);
         console.log(docs);
-
+        fn(docs);
 
     });
 
 }
 
 
-shoplistobject={
-    navneet:shoplist
-};
 
-module.exports=shoplistobject;
+
